@@ -9,7 +9,7 @@ app.use(cors());
 const pool = new Pool({
     host: "localhost",
     user: "postgres",
-    database: "puntos",
+    database: "diurno",
     password: "12345",
     port: 5432
 })
@@ -23,14 +23,18 @@ app.get("/api/v1/users", async (req, res) => {
 
 app.get("/api/v1/puntos2", async (req, res) => {
     const resultado = await pool.query("SELECT id, nombre, img, Direccion, Horario, ST_AsGeoJSON(geom) AS geometry FROM museums order by id");
-    const features = resultado.rows.map(row => ({
-        type: 'Feature',
-        geometry: JSON.parse(row.geometry).coordinates,
-        nombre: row.nombre,
-        img: row.img,
-        direccion: row.direccion,
-        horario: row.horario        
-    }));
+    const features = resultado.rows.map(row => {
+        const geometry = JSON.parse(row.geometry);
+        return {
+            type: 'Feature',
+            geometry: geometry ? geometry.coordinates : null,
+            id: row.id,
+            nombre: row.nombre,
+            img: row.img,
+            direccion: row.direccion,
+            horario: row.horario        
+        };
+    });
     res.json(features);
 });
 
