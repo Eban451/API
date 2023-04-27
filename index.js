@@ -6,10 +6,18 @@ const { Pool } = pg;
 app.use(express.json());
 app.use(cors());
 
+// const pool = new Pool({
+//     host: "localhost",
+//     user: "postgres",
+//     database: "diurno",
+//     password: "12345",
+//     port: 5432
+// })
+
 const pool = new Pool({
     host: "localhost",
     user: "postgres",
-    database: "diurno",
+    database: "final",
     password: "12345",
     port: 5432
 })
