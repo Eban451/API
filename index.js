@@ -25,7 +25,7 @@ const pool = new Pool({
 app.listen(4000)
 
 app.get("/api/v1/users", async (req, res) => {
-    const resultado = await pool.query("select  * from users order by id");
+    const resultado = await pool.query("SELECT users.*, categoria.nombrecategoria FROM users LEFT JOIN categoria ON users.categoria = categoria.id ORDER BY users.id");
     res.json(resultado.rows)
 })
 
