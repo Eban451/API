@@ -24,18 +24,43 @@ const pool = new Pool({
 
 app.listen(4000)
 
+// OBTENER DATOS MANTENEDOR USUARIOS
+
 app.get("/api/v1/users", async (req, res) => {
     const resultado = await pool.query("SELECT users.*, categoria.id AS categoria_id, categoria.nombrecategoria FROM users LEFT JOIN categoria ON users.categoria = categoria.id ORDER BY users.id");
     res.json(resultado.rows)
 })
+
+// OBTENER DATOS USUARIOS PARA EL REGISTRO
 
 app.get("/api/v1/users3", async (req, res) => {
     const resultado = await pool.query("SELECT users.*, categoria.id AS categoria_id, categoria.nombrecategoria FROM users LEFT JOIN categoria ON users.categoria = categoria.id ORDER BY users.id");
     res.json(resultado.rows)
 })
 
+// OBTENER DATOS MANTENEDOR PUNTOS
+
 app.get("/api/v1/puntos2", async (req, res) => {
-    const resultado = await pool.query("SELECT id, nombre, img, Direccion, Horario, ST_AsGeoJSON(geom) AS geometry FROM museums order by id");
+    const resultado = await pool.query(`
+        SELECT 
+            museums.id, 
+            museums.nombre, 
+            museums.img, 
+            museums.Direccion, 
+            museums.Horario, 
+            ST_AsGeoJSON(museums.geom) AS geometry,
+            museums.categoria, 
+            museums.creador,
+            categoriapuntos.tipo,
+            users.id AS user_id,
+            users.name AS user_name
+        FROM 
+            museums 
+            INNER JOIN categoriapuntos ON museums.categoria = categoriapuntos.id 
+            INNER JOIN users ON museums.creador = users.id 
+        ORDER BY 
+            museums.id
+    `);
     const features = resultado.rows.map(row => {
         const geometry = JSON.parse(row.geometry);
         return {
@@ -45,11 +70,19 @@ app.get("/api/v1/puntos2", async (req, res) => {
             nombre: row.nombre,
             img: row.img,
             direccion: row.direccion,
-            horario: row.horario        
+            horario: row.horario,
+            idcategoria: row.categoria,
+            tipo: row.tipo,
+            idcreador: row.creador,
+            user_id: row.user_id,
+            user_name: row.user_name,
         };
     });
     res.json(features);
 });
+
+
+// DATOS PARA PASSPORTCONFIG
 
 app.get("/api/v1/users2", async (req, res) => {
     const { email } = req.query;
@@ -59,6 +92,8 @@ app.get("/api/v1/users2", async (req, res) => {
     res.json(resultado.rows);
   });
 
+  // OBTENER UNA ID ESPECIFICA DE UN USUARIO (EDITAR, BORRAR, DESERIALISER, deserialize) 
+
   app.get("/api/v1/users/:id", async (req, res) => {
     const { id } = req.params;
     const query = `SELECT * FROM users WHERE id = $1`;
@@ -66,6 +101,8 @@ app.get("/api/v1/users2", async (req, res) => {
     const resultado = await pool.query(query, values);
     res.json(resultado.rows[0]);
   });
+
+// CARGA PUNTOS MAPA
 
 app.get("/api/v1/puntos", async (req, res) => {
     const resultado = await pool.query(
@@ -88,6 +125,8 @@ app.get("/api/v1/puntos", async (req, res) => {
     res.json(geojsonData);
 });
 
+// ELIMINAR MANTENEDOR USUARIOS
+
 app.delete("/api/v1/users/:id", async (req, res) => {
     try {
         const { id } = req.params
@@ -104,7 +143,7 @@ app.delete("/api/v1/users/:id", async (req, res) => {
 
 })
 
-// INGRESAR DATOS
+// INGRESAR DATOS MANTENEDOR USUARIO
 
 app.post("/api/v1/users", async (req, res) => {
     const { name, email, password, categoria } = req.body;
@@ -117,7 +156,7 @@ app.post("/api/v1/users", async (req, res) => {
 });
 
 
-// PRUEBA REGISTRO
+// REGISTRO USUARIOS
 
 app.post("/api/v1/users3", async (req, res) => {
     const { name, email, password } = req.body;
@@ -130,7 +169,7 @@ app.post("/api/v1/users3", async (req, res) => {
 });
 
 
-// EDITAR
+// EDITAR Mantenedor USUARIOS
 
 app.put("/api/v1/users/:id", async (req, res) => {
     const { id, name, email, password, categoria } = req.body;
