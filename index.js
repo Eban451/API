@@ -25,7 +25,12 @@ const pool = new Pool({
 app.listen(4000)
 
 app.get("/api/v1/users", async (req, res) => {
-    const resultado = await pool.query("SELECT users.*, categoria.nombrecategoria FROM users LEFT JOIN categoria ON users.categoria = categoria.id ORDER BY users.id");
+    const resultado = await pool.query("SELECT users.*, categoria.id AS categoria_id, categoria.nombrecategoria FROM users LEFT JOIN categoria ON users.categoria = categoria.id ORDER BY users.id");
+    res.json(resultado.rows)
+})
+
+app.get("/api/v1/users3", async (req, res) => {
+    const resultado = await pool.query("SELECT users.*, categoria.id AS categoria_id, categoria.nombrecategoria FROM users LEFT JOIN categoria ON users.categoria = categoria.id ORDER BY users.id");
     res.json(resultado.rows)
 })
 
@@ -102,21 +107,24 @@ app.delete("/api/v1/users/:id", async (req, res) => {
 // INGRESAR DATOS
 
 app.post("/api/v1/users", async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, categoria } = req.body;
     const resultado = await pool.query(
-      "INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id",
-      [name, email, password]
+      "INSERT INTO users (name, email, password, categoria) VALUES ($1, $2, $3, $4) RETURNING id",
+      [name, email, password, categoria]
     );
     console.log(resultado);
     res.json({});
-  });
+});
 
 
 // PRUEBA REGISTRO
 
-app.post("/api/v1/users", async (req, res) => {
+app.post("/api/v1/users3", async (req, res) => {
     const { name, email, password } = req.body;
-    const resultado = await pool.query("INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id", [name, email, password]);
+    const resultado = await pool.query(
+      "INSERT INTO users (name, email, password, categoria) VALUES ($1, $2, $3, $4) RETURNING id",
+      [name, email, password, 3]
+    );
     console.log(resultado);
     res.json({});
 });
@@ -125,9 +133,8 @@ app.post("/api/v1/users", async (req, res) => {
 // EDITAR
 
 app.put("/api/v1/users/:id", async (req, res) => {
-    const { id, name, email } = req.body;
-    const resultado = await pool.query("update users set name =$1, email=$2 where id=$3", [name, email, id]);
-    console.log(resultado),
-        res.json({})
-
-})
+    const { id, name, email, password, categoria } = req.body;
+    const resultado = await pool.query("update users set name=$1, email=$2, password=$3, categoria=$4 where id=$5", [name, email, password, categoria, id]);
+    console.log(resultado);
+    res.json({});
+});
