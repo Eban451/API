@@ -31,6 +31,12 @@ app.get("/api/v1/users", async (req, res) => {
     res.json(resultado.rows)
 })
 
+app.get("/api/v1/puntos3", async (req, res) => {
+    const resultado = await pool.query("SELECT * from museums order by id");
+    res.json(resultado.rows)
+})
+
+
 // OBTENER DATOS USUARIOS PARA EL REGISTRO
 
 app.get("/api/v1/users3", async (req, res) => {
@@ -125,7 +131,9 @@ app.get("/api/v1/puntos", async (req, res) => {
     res.json(geojsonData);
 });
 
-// ELIMINAR MANTENEDOR USUARIOS
+// MANTENEDOR DE USUARIOS
+
+// ELIMINAR EN MANTENEDOR USUARIOS
 
 app.delete("/api/v1/users/:id", async (req, res) => {
     try {
@@ -177,3 +185,23 @@ app.put("/api/v1/users/:id", async (req, res) => {
     console.log(resultado);
     res.json({});
 });
+
+
+// MANTENEDOR DE PUNTOS MAPA
+
+// INGRESAR DATOS MANTENEDOR Puntos
+
+app.post("/api/v1/puntos", async (req, res) => {
+    const { nombre, img, direccion, horario, geom, categoria, creador } = req.body;
+  
+    // Split the coordinates string into an array of longitude and latitude values
+    const [lng, lat] = geom.split(',');
+  
+    const resultado = await pool.query(
+      "INSERT INTO museums (nombre, img, direccion, horario, geom, categoria, creador) VALUES ($1, $2, $3, $4, ST_SetSRID(ST_MakePoint($5, $6), 4326), $7, $8) RETURNING id",
+      [nombre, img, direccion, horario, lng, lat, categoria, creador]
+    );
+  
+    console.log(resultado);
+    res.json({});
+  });
