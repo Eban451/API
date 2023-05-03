@@ -206,7 +206,7 @@ app.post("/api/v1/puntos", async (req, res) => {
     res.json({});
   });
 
-  // ELIMINAR EN MANTENEDOR USUARIOS PUNTOS
+  // ELIMINAR EN MANTENEDOR PUNTOS
 
 app.delete("/api/v1/puntos/:id", async (req, res) => {
     try {
@@ -223,3 +223,20 @@ app.delete("/api/v1/puntos/:id", async (req, res) => {
 
 
 })
+
+// EDITAR Mantenedor PUNTOS
+
+app.put("/api/v1/puntos/:id", async (req, res) => {
+    const { nombre, img, direccion, horario, geom, categoria, creador } = req.body;
+    const id = req.params.id;
+  
+    // Split the coordinates string into an array of longitude and latitude values
+    const [lng, lat] = geom.split(',');
+  
+    const resultado = await pool.query(
+      "UPDATE museums SET nombre=$1, img=$2, direccion=$3, horario=$4, geom=ST_SetSRID(ST_MakePoint($5, $6), 4326), categoria=$7, creador=$8 WHERE id=$9",
+      [nombre, img, direccion, horario, lng, lat, categoria, creador, id]
+    );
+    console.log(resultado);
+    res.json({});
+  });
