@@ -189,7 +189,7 @@ app.put("/api/v1/users/:id", async (req, res) => {
 
 // MANTENEDOR DE PUNTOS MAPA
 
-// INGRESAR DATOS MANTENEDOR Puntos
+// INGRESAR DATOS MANTENEDOR PUNTOS
 
 app.post("/api/v1/puntos", async (req, res) => {
     const { nombre, img, direccion, horario, geom, categoria, creador } = req.body;
@@ -205,3 +205,21 @@ app.post("/api/v1/puntos", async (req, res) => {
     console.log(resultado);
     res.json({});
   });
+
+  // ELIMINAR EN MANTENEDOR USUARIOS PUNTOS
+
+app.delete("/api/v1/puntos/:id", async (req, res) => {
+    try {
+        const { id } = req.params
+        const resultado = await pool.query("delete from museums where id=$1 RETURNING id", [id]);
+        if (resultado.rows) {
+            res.status(200).json({ id: resultado.rows[0].id })
+        } else {
+            res.status(404).json({ error: "Registro no Existe" })
+        }
+    } catch (e) {
+        res.status(500).json({ error: e })
+    }
+
+
+})
