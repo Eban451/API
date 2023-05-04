@@ -31,6 +31,8 @@ app.get("/api/v1/users", async (req, res) => {
     res.json(resultado.rows)
 })
 
+// OBTENER DATOS MANTENEDOR PUNTOS
+
 app.get("/api/v1/puntos3", async (req, res) => {
     const resultado = await pool.query("SELECT * from museums order by id");
     res.json(resultado.rows)
