@@ -94,7 +94,7 @@ app.get("/api/v1/puntos2", async (req, res) => {
 
 app.get("/api/v1/users2", async (req, res) => {
     const { email } = req.query;
-    const query = email ? `SELECT * FROM users WHERE email = $1` : `SELECT * FROM users ORDER BY id`;
+    const query = email ? `SELECT id, name, email, password, categoria FROM users WHERE email = $1` : `SELECT id, name, email, password, categoria FROM users ORDER BY id`;
     const values = email ? [email] : [];
     const resultado = await pool.query(query, values);
     res.json(resultado.rows);
@@ -104,7 +104,7 @@ app.get("/api/v1/users2", async (req, res) => {
 
   app.get("/api/v1/users/:id", async (req, res) => {
     const { id } = req.params;
-    const query = `SELECT * FROM users WHERE id = $1`;
+    const query = `SELECT id, name, email, password, categoria FROM users WHERE id = $1`;
     const values = [id];
     const resultado = await pool.query(query, values);
     res.json(resultado.rows[0]);
