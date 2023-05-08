@@ -27,14 +27,14 @@ app.listen(4000)
 // OBTENER DATOS MANTENEDOR USUARIOS
 
 app.get("/api/v1/users", async (req, res) => {
-    const resultado = await pool.query("SELECT users.*, categoria.id AS categoria_id, categoria.nombrecategoria FROM users LEFT JOIN categoria ON users.categoria = categoria.id ORDER BY users.id");
+    const resultado = await pool.query("SELECT users.id, users.name, users.email, users.password, users.categoria, categoria.id AS categoria_id, categoria.nombrecategoria FROM users LEFT JOIN categoria ON users.categoria = categoria.id ORDER BY users.id");
     res.json(resultado.rows)
 })
 
 // OBTENER DATOS MANTENEDOR PUNTOS
 
 app.get("/api/v1/puntos3", async (req, res) => {
-    const resultado = await pool.query("SELECT * from museums order by id");
+    const resultado = await pool.query("SELECT id, nombre, img, direccion, horario, geom, categoria, creador from museums order by id");
     res.json(resultado.rows)
 })
 
