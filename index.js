@@ -112,9 +112,57 @@ app.get("/api/v1/users2", async (req, res) => {
 
 // CARGA PUNTOS MAPA
 
+// CATEGORIA 1
+
 app.get("/api/v1/puntos", async (req, res) => {
     const resultado = await pool.query(
-        "SELECT id, nombre, img, Direccion, Horario, ST_AsGeoJSON(geom) AS geometry FROM museums order by id"
+        "SELECT id, nombre, img, Direccion, Horario, categoria, ST_AsGeoJSON(geom) AS geometry FROM museums where categoria =1 order by id"
+    );
+    const geojsonData = {
+        type: "FeatureCollection",
+        features: resultado.rows.map((feature) => ({
+            type: "Feature",
+            geometry: JSON.parse(feature.geometry),
+            properties: {
+                id: feature.id,
+                nombre: feature.nombre,
+                img: feature.img,
+                Direccion: feature.direccion,
+                Horario: feature.horario,
+            },
+        })),
+    };
+    res.json(geojsonData);
+});
+
+// CATEGORIA 2
+
+app.get("/api/v1/puntos5", async (req, res) => {
+    const resultado = await pool.query(
+        "SELECT id, nombre, img, Direccion, Horario, categoria, ST_AsGeoJSON(geom) AS geometry FROM museums where categoria =2 order by id"
+    );
+    const geojsonData = {
+        type: "FeatureCollection",
+        features: resultado.rows.map((feature) => ({
+            type: "Feature",
+            geometry: JSON.parse(feature.geometry),
+            properties: {
+                id: feature.id,
+                nombre: feature.nombre,
+                img: feature.img,
+                Direccion: feature.direccion,
+                Horario: feature.horario,
+            },
+        })),
+    };
+    res.json(geojsonData);
+});
+
+// CATEGORIA 3
+
+app.get("/api/v1/puntos6", async (req, res) => {
+    const resultado = await pool.query(
+        "SELECT id, nombre, img, Direccion, Horario, categoria, ST_AsGeoJSON(geom) AS geometry FROM museums where categoria =3 order by id"
     );
     const geojsonData = {
         type: "FeatureCollection",
@@ -241,4 +289,37 @@ app.put("/api/v1/puntos/:id", async (req, res) => {
     );
     console.log(resultado);
     res.json({});
+  });
+
+  // DATOS PARA ESTADISTICAS
+
+  app.get("/api/v1/estats1", async (req, res) => {
+    const resultado = await pool.query(`
+      SELECT 
+        categoriapuntos.tipo,
+        COUNT(museums.id) AS total_museums
+      FROM 
+        museums 
+        INNER JOIN categoriapuntos ON museums.categoria = categoriapuntos.id 
+      GROUP BY 
+        categoriapuntos.tipo
+    `);
+    res.json(resultado.rows);
+  });
+
+  app.get("/api/v1/estats2", async (req, res) => {
+    const resultado = await pool.query(`
+      SELECT 
+        museums.creador,
+        users.name AS creator_name,
+        COUNT(museums.creador) AS total_museums
+      FROM 
+        museums 
+        INNER JOIN users ON museums.creador = users.id 
+      GROUP BY 
+        museums.creador, 
+        users.name
+    `);
+    res.json(resultado.rows);
+    console.log(resultado)
   });
