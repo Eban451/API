@@ -6,14 +6,6 @@ const { Pool } = pg;
 app.use(express.json());
 app.use(cors());
 
-// const pool = new Pool({
-//     host: "localhost",
-//     user: "postgres",
-//     database: "diurno",
-//     password: "12345",
-//     port: 5432
-// })
-
 const pool = new Pool({
     host: "localhost",
     user: "postgres",
@@ -291,7 +283,7 @@ app.put("/api/v1/puntos/:id", async (req, res) => {
     res.json({});
   });
 
-  // DATOS PARA ESTADISTICAS
+  // DATOS PARA ESTADISTICAS EN MANTENEDOR USUARIOS
 
   app.get("/api/v1/estats1", async (req, res) => {
     const resultado = await pool.query(`
