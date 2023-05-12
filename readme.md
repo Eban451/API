@@ -17,4 +17,4 @@ Esteban Zuñiga (Eban451)
 
 Primero se debe instalar el complemento Postgis desde el Aplication Stack Builder que se instala junto con con PostgreSQL (también puede instalarse al momento de instalar PostgreSQL), de esta manera:
 
-![App Screenshot]()
+![App Screenshot](https://github.com/Eban451/API/blob/master/screenshots/IPostgis.JPG?raw=true)
