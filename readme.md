@@ -55,5 +55,16 @@ Por otra parte, esta API con sus endpoints está en el siguiente puerto (aunque 
 
 ```bash
 app.listen(4000)
+apiURL=http://localhost:4000
+```
+
+Clonar proyecto
+```bash
+  git clone https://github.com/Eban451/API.git
+```
+
+El proyecto se puede correr de esta manera igualmente
+```bash
+  npm run dev 
 ```
 
