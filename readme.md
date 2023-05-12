@@ -90,11 +90,34 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
     - [PORTAFOLIO-TALENTO-DIGITAL-API: src/controllers/top.controllers.js linea 296/311]
 
 #### Página Web
-#### Algoritmo de cálculo y manipulación de archivos de texto
-#### Página web y html
-#### Lenguaje Node
-#### Conexión a base de datos
-#### Uso de Express
+- Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
 
-Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+#### Algoritmo de cálculo y manipulación de archivos de texto
+- Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+
+#### Página web y html
+- Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+
+#### Lenguaje Node
+- Inclusión de paquetes y librerías de usuario
+   - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js al comienzo están los paquetes]
+- Agrupación del código y separación por funcionalidad
+   - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js en el documento en general]
+- Utilización de funciones asíncronas
+   - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js en el documento en general]
+- Lectura de parámetros de entrada
+   - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+- Funcionamiento general del aplicativo
+   -
+#### Conexión a base de datos
+- Manejo de conexión a base de datos desde Node
+   - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js entre las líneas 9 y 15]
+- Manejo y ejecución de consultas desde Node
+   - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js en el documento en general]
+   
+#### Uso de Express
+- Creación servicio Rest con Express
+   - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+
+
     
