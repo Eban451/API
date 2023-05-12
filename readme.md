@@ -108,13 +108,13 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
 - Lectura de parámetros de entrada
    - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
 - Funcionamiento general del aplicativo
-   -
+   - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
 #### Conexión a base de datos
 - Manejo de conexión a base de datos desde Node
    - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js entre las líneas 9 y 15]
 - Manejo y ejecución de consultas desde Node
    - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js en el documento en general]
-   
+
 #### Uso de Express
 - Creación servicio Rest con Express
    - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
