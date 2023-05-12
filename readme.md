@@ -40,5 +40,11 @@ Presionar el botón de ejecutar, y esperar esté todo listo
 ![App Screenshot](https://github.com/Eban451/API/blob/master/screenshots/QTL2.png?raw=true)
 
 Luego de esto, está todo OK para poder crear las tablas en la base de datos.
+Se deja un archivo llamado "Tablas e Insert de Puntos" para poder mostrar algunos puntos al cargar la aplicación
 
+IMPORTANTE!
+Crear el primer usuario con estas credenciales:
 
+INSERT INTO users(name,email,categoria,password) VALUES('Master','master123@gmail.com',1,'$2b$10$LTx/J3o9heeA1BZzpYd5U.pjcWiyv1TU0TRQWh3IOk8RJXXiR7PTa');
+
+Para que quedé como Master, para así tener todas la funcionalidades desbloqueadas 
