@@ -89,9 +89,6 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
 - Uso de cláusulas de agrupación de información para obtener datos agregados: 
     - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js linea 296/311]
 
-#### Página Web
-- Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
-
 #### Algoritmo de cálculo y manipulación de archivos de texto
 - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
 
