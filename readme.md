@@ -90,10 +90,10 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
     - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js linea 296/311]
 
 #### Algoritmo de cálculo y manipulación de archivos de texto
-- Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+- Ver repositorio aplicación: https://github.com/Eban451/PORTAFOLIO-TALENTO-DIGITAL.git
 
 #### Página web y html
-- Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+- Ver repositorio aplicación: https://github.com/Eban451/PORTAFOLIO-TALENTO-DIGITAL.git
 
 #### Lenguaje Node
 - Inclusión de paquetes y librerías de usuario
@@ -103,9 +103,9 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
 - Utilización de funciones asíncronas
    - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js en el documento en general]
 - Lectura de parámetros de entrada
-   - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+   - Ver repositorio aplicación: https://github.com/Eban451/PORTAFOLIO-TALENTO-DIGITAL.git
 - Funcionamiento general del aplicativo
-   - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+   - Ver repositorio aplicación: https://github.com/Eban451/PORTAFOLIO-TALENTO-DIGITAL.git
 #### Conexión a base de datos
 - Manejo de conexión a base de datos desde Node
    - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js entre las líneas 9 y 15]
@@ -115,7 +115,7 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
 #### Uso de Express
 - Creación servicio Rest con Express
    - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js en el documento en general]
-   - Además ver repositorio aplicación donde se puede ver la integración del front: PORTAFOLIO-TALENTO-DIGITAL
+   - Además ver repositorio aplicación donde se puede ver la integración del front: https://github.com/Eban451/PORTAFOLIO-TALENTO-DIGITAL.git
 
 
     
