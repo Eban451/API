@@ -45,6 +45,15 @@ Se deja un archivo llamado "Tablas e Insert de Puntos" para poder mostrar alguno
 IMPORTANTE!
 Crear el primer usuario con estas credenciales:
 
+```bash
 INSERT INTO users(name,email,categoria,password) VALUES('Master','master123@gmail.com',1,'$2b$10$LTx/J3o9heeA1BZzpYd5U.pjcWiyv1TU0TRQWh3IOk8RJXXiR7PTa');
+```
 
-Para que quedé como Master, para así tener todas la funcionalidades desbloqueadas 
+Para que quedé como Master, para así tener todas la funcionalidades desbloqueadas.
+
+Por otra parte, esta API con sus endpoints está en el siguiente puerto (aunque puede ser cambiado a su conveniencia):
+
+```bash
+app.listen(4000)
+```
+
