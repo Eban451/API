@@ -62,7 +62,7 @@ apiURL=http://localhost:4000
 
 Clonar proyecto
 ```bash
-  git clone https://github.com/Eban451/API.git
+  git clone https://github.com/Eban451/PORTAFOLIO-TALENTO-DIGITAL-API.git
 ```
 
 El proyecto se puede correr de esta manera igualmente
@@ -117,7 +117,8 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
 
 #### Uso de Express
 - Creación servicio Rest con Express
-   - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+   - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js en el documento en general]
+   - Además ver repositorio aplicación donde se puede ver la integración del front: PORTAFOLIO-TALENTO-DIGITAL
 
 
     
