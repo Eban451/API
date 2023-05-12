@@ -25,4 +25,6 @@ Luego debe ser creada la base de datos en PostgreSQL (Por defecto se llama "fina
 
 Al ya tener creada su DB, debe abrir el programa Postgis, y realizar la siguiente acción:
 
-![App Screenshot](?raw=true)
+![App Screenshot](https://github.com/Eban451/API/blob/master/screenshots/CPDB.JPG?raw=true)
+
+Donde, se debe conectar Postgis con la base de datos previamente creada, usando sus datos correspondientes.
