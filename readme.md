@@ -4,7 +4,7 @@ Esteban Zuñiga (Eban451)
 
 
 # Repositorio
-[https://github.com/Eban451/API]
+[https://github.com/Eban451/PORTAFOLIO-TALENTO-DIGITAL-API.git]
 
 ## Para que el proyecto funcione correctamente es necesario la instalación node.js, y mediante terminal con el comando "npm i" se deben instalar las siguientes dependencias:
 - express
