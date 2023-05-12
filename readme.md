@@ -73,3 +73,8 @@ El proyecto se puede correr de esta manera igualmente
 También dejo esta imagen de cómo se relaciona mi base de datos una vez creada:
 
 ![App Screenshot](https://github.com/Eban451/API/blob/master/screenshots/BD3.png?raw=true)
+
+## Rúbrica de evaluación: 
+Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
+
+#### Consultas base de datos
