@@ -85,9 +85,9 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
 - Uso de WHERE para filtrar la información requerida: 
     - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js linea 89/99/111/134/157/183/226/256]
 - Uso de cláusulas de ordenamiento para presentar la información: 
-    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/controllers/top.controllers.js linea 22/29/37/61/89/111/134/157]
+    - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js linea 22/29/37/61/89/111/134/157]
 - Uso de cláusulas de agrupación de información para obtener datos agregados: 
-    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/controllers/top.controllers.js linea 296/311]
+    - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js linea 296/311]
 
 #### Página Web
 - Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
