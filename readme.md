@@ -28,3 +28,17 @@ Al ya tener creada su DB, debe abrir el programa Postgis, y realizar la siguient
 ![App Screenshot](https://github.com/Eban451/API/blob/master/screenshots/CPDB.JPG?raw=true)
 
 Donde, se debe conectar Postgis con la base de datos previamente creada, usando sus datos correspondientes.
+
+Ahora, se debe instalar el complemente de postgis mediante la Query Tool de esta manera:
+
+![App Screenshot](https://github.com/Eban451/API/blob/master/screenshots/QTL1.png?raw=true)
+
+Y al abrirse la ventana se debe digitar lo siguiente:
+"CREATE EXTENSION postgis;"
+Presionar el botón de ejecutar, y esperar esté todo listo
+
+![App Screenshot](https://github.com/Eban451/API/blob/master/screenshots/QTL2.png?raw=true)
+
+Luego de esto, está todo OK para poder crear las tablas en la base de datos.
+
+
