@@ -83,33 +83,18 @@ Por último dejo las ubicaciones de los puntos de la rúbrica de evaluación:
 - Uso de JOIN para relacionar la información de distintas tablas: 
     - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js linea 22/37/59/60/295/310]
 - Uso de WHERE para filtrar la información requerida: 
-    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/controllers/usuarios.controllers.js linea 29]
+    - [PORTAFOLIO-TALENTO-DIGITAL-API: index.js linea 89/99/111/134/157/183/226/256]
 - Uso de cláusulas de ordenamiento para presentar la información: 
-    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/controllers/top.controllers.js linea 6]
+    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/controllers/top.controllers.js linea 22/29/37/61/89/111/134/157]
 - Uso de cláusulas de agrupación de información para obtener datos agregados: 
-    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/controllers/top.controllers.js linea 6]
-#### Página Web 
-- Uso de tags html: 
-    - [PORTAFOLIO-TALENTO-DIGITAL: /views/partials/plantilla.hbs todo el documento]
-- Utilizacion de Framework css: 
-    - [PORTAFOLIO-TALENTO-DIGITAL: /views/public/css/index.css todo el documento]
-- Responsividad: 
-    - [PORTAFOLIO-TALENTO-DIGITAL: /views/public/css/index.css todo el documento]
-- Template y componentes: 
-    - [PORTAFOLIO-TALENTO-DIGITAL: /views/partials/plantilla.hbs todo el documento]
-    - [PORTAFOLIO-TALENTO-DIGITAL: /views/partials/navbar.hbs todo el documento]
-    - [PORTAFOLIO-TALENTO-DIGITAL: /views/partials/footer.hbs todo el documento]
-    
-#### Servicios
-- Creacion de servicio REST: 
-    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/routes/generos.routes.js todo el documento]
-    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/routes/top.routes.js todo el documento]
-    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/routes/usuarios.routes.js todo el documento]
+    - [PORTAFOLIO-TALENTO-DIGITAL-API: src/controllers/top.controllers.js linea 296/311]
 
-- Servicio de usuarios:
-    - [PORTAFOLIO-TALENTO-DIGITAL: /views/mantenedor/index.hbs todo el documento]
-    - [PORTAFOLIO-TALENTO-DIGITAL: /router.js desde linea 285 hasta 368]
-- Servicio de autorizacion: 
-    - [PORTAFOLIO-TALENTO-DIGITAL: /index.js desde linea 47 hasta 90]
-- Servicio de mantenedor: 
-    - [PORTAFOLIO-TALENTO-DIGITAL: /router.js desde linea 299 hasta 314]
+#### Página Web
+#### Algoritmo de cálculo y manipulación de archivos de texto
+#### Página web y html
+#### Lenguaje Node
+#### Conexión a base de datos
+#### Uso de Express
+
+Ver repositorio aplicación: PORTAFOLIO-TALENTO-DIGITAL
+    
