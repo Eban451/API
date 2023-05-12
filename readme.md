@@ -42,6 +42,8 @@ Presionar el botón de ejecutar, y esperar esté todo listo
 Luego de esto, está todo OK para poder crear las tablas en la base de datos.
 Se deja un archivo llamado "Tablas e Insert de Puntos" para poder mostrar algunos puntos al cargar la aplicación
 
+Igualmente dejo, un link de todo el proceso: https://www.youtube.com/watch?v=tTUM9XfDvqk
+
 IMPORTANTE!
 Crear el primer usuario con estas credenciales:
 
@@ -68,3 +70,6 @@ El proyecto se puede correr de esta manera igualmente
   npm run dev 
 ```
 
+También dejo esta imagen de cómo se relaciona mi base de datos una vez creada:
+
+![App Screenshot](https://github.com/Eban451/API/blob/master/screenshots/BD3.png?raw=true)
