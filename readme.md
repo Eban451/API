@@ -53,6 +53,13 @@ INSERT INTO users(name,email,categoria,password) VALUES('Master','master123@gmai
 
 Para que quedé como Master, para así tener todas la funcionalidades desbloqueadas.
 
+El usuario master quedaría cómo:
+
+```bash
+usuario: master123@gmail.com
+contraseña: 123456
+```
+
 Por otra parte, esta API con sus endpoints está en el siguiente puerto (aunque puede ser cambiado a su conveniencia):
 
 ```bash
